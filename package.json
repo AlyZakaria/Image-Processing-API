@@ -15,17 +15,12 @@
   "author": "Aly",
   "license": "ISC",
   "dependencies": {
-    "babel-preset-stage-3": "^6.24.1",
     "express": "^4.18.1",
     "jasmine": "^4.3.0",
     "jasmine-spec-reporter": "^7.0.0",
-    "sharp": "^0.30.7",
-    "supertest": "^6.2.4"
+    "sharp": "^0.30.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.13",
-    "@babel/eslint-parser": "^7.18.9",
-    "@babel/preset-typescript": "^7.18.6",
     "@types/express": "^4.17.13",
     "@types/jasmine": "^4.0.3",
     "@types/sharp": "^0.30.5",
@@ -33,18 +28,14 @@
     "@types/typescript": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^5.34.0",
     "@typescript-eslint/parser": "^5.34.0",
-    "babel-eslint": "^10.1.0",
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-babel": "^5.3.1",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-module-resolver": "^1.4.0",
     "eslint-plugin-prettier": "^4.2.1",
     "node-ts": "^5.1.2",
     "nodemon": "^2.0.19",
     "prettier": "^2.7.1",
-    "typescript": "^4.7.4",
-    "ts-node": "^10.9.1"
+    "supertest": "^6.2.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
   }
 }
