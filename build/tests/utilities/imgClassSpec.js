@@ -17,28 +17,28 @@ const checkInputs_1 = __importDefault(require("../../utilities/checkInputs"));
 describe('Test Image Class ', () => {
     describe('Finding Image in ./Resized_Images', () => {
         it('The image has been found', () => {
-            let img = new image_1.default(200, 200, 'pyramid', 'JPG');
+            const img = new image_1.default(200, 200, 'pyramid', 'JPG');
             expect(img.check()).toBeTruthy();
         });
         it('The image has not been found', () => {
-            let img = new image_1.default(205, 200, 'pyramid', 'JPG');
+            const img = new image_1.default(205, 200, 'pyramid', 'JPG');
             expect(img.check()).toBeFalsy();
         });
     });
     describe('Finding Image in ./Images', () => {
         it('The image has been found', () => {
-            let img = new image_1.default(200, 200, 'castle', 'JPG');
+            const img = new image_1.default(200, 200, 'castle', 'JPG');
             expect((0, checkInputs_1.default)(img)).toBeTruthy();
         });
         it('The image has not been found', () => {
-            let img = new image_1.default(200, 200, 'dasioha', 'JPG');
+            const img = new image_1.default(200, 200, 'dasioha', 'JPG');
             expect((0, checkInputs_1.default)(img)).toBeFalsy();
         });
     });
     // to check if the image has been resized
     describe('Image has been resized', () => {
         it('Image has been resized with (500,500)', () => {
-            let img = new image_1.default(500, 500, 'pyramid', 'JPG');
+            const img = new image_1.default(500, 500, 'pyramid', 'JPG');
             expect(img.resize()).toBeTruthy();
         });
     });
@@ -46,14 +46,14 @@ describe('Test Image Class ', () => {
     describe('Image has not been resized', () => {
         // with negatives inputs
         it('Not resized due to negatives inputs', () => __awaiter(void 0, void 0, void 0, function* () {
-            let img = new image_1.default(-500, -500, 'pyramid', 'JPG');
-            let bool = yield img.resize();
+            const img = new image_1.default(-500, -500, 'pyramid', 'JPG');
+            const bool = yield img.resize();
             expect(bool).toBeFalsy();
         }));
         //with wrong file name
         it('Not resized due to Wrong fileName', () => __awaiter(void 0, void 0, void 0, function* () {
-            let img = new image_1.default(500, 500, 'dnanas', 'JPG');
-            let bool = yield img.resize();
+            const img = new image_1.default(500, 500, 'dnanas', 'JPG');
+            const bool = yield img.resize();
             expect(bool).toBeFalsy();
         }));
     });

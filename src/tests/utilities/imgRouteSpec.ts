@@ -1,6 +1,5 @@
 import app from '../../server'
 import supertest from 'supertest'
-import imgRoute from '../../Route/imageRoute'
 
 const request = supertest(app)
 

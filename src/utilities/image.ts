@@ -1,16 +1,16 @@
 import { resolve } from 'path'
+import sharp from 'sharp'
+import fs from 'fs'
 
-const fs = require('fs')
 const dir = './Resized_Images'
 const orDir = './Images'
-const sharp = require('sharp')
 
 class image {
     width: number
     height: number
     filename: string
-    type: string = 'JPG'
-    filedir: string = ''
+    type = 'JPG'
+    filedir = ''
     fileTitle: (number | string)[] = []
 
     constructor(width: number, height: number, filename: string, type: string) {
@@ -23,7 +23,7 @@ class image {
 
     // to check if the image is already in the resized_Image folder
     check(): boolean {
-        let filDir = this.fileTitle.join('.')
+        const filDir = this.fileTitle.join('.')
         const files = fs.readdirSync(dir)
         let bool = false
 

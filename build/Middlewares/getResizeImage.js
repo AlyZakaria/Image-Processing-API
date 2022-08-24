@@ -15,22 +15,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getResizedImage = void 0;
 const image_1 = __importDefault(require("../utilities/image"));
 const checkInputs_1 = __importDefault(require("../utilities/checkInputs"));
-function getResizedImage(req, res, next) {
-    getImage(req, res, next)
+function getResizedImage(req, res) {
+    getImage(req)
         .then((img) => res.sendFile(img.filedir))
         .catch((img) => __awaiter(this, void 0, void 0, function* () {
         yield img.resize();
         res.sendFile(img.filedir);
     }))
-        .catch((error) => res.send("Image can't be processed... Please,Try again.."));
+        .catch(() => res.send("Image can't be processed... Please,Try again.."));
 }
 exports.getResizedImage = getResizedImage;
-let getImage = (req, res, next) => {
+const getImage = (req) => {
     let img = new image_1.default(0, 0, '', '');
     return new Promise((resolve, reject) => {
-        let filename = req.query.filename;
-        let height = Number(req.query.height);
-        let width = Number(req.query.width);
+        const filename = req.query.filename;
+        const height = Number(req.query.height);
+        const width = Number(req.query.width);
         img = new image_1.default(width, height, filename, 'JPG');
         if (img.check())
             resolve(img);

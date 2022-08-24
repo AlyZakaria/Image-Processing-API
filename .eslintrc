@@ -1,16 +1,12 @@
+
 {
-    "root": true,
-    
-    "parserOptions": { 
-        "project": ["./tsconfig.json"] ,
-         "ecmaVersion": 2017},
-    "plugins": [
-        "@typescript-eslint"
-    ],
-    "rules": {
-        "semi": ["error", "always"]
-        
-    },
-    "ignorePatterns": ["src/**/*.test.ts", "src/frontend/generated/*"]
-    
+"root": true,
+"parser": "@typescript-eslint/parser",
+"plugins": [
+  "@typescript-eslint"
+],
+"extends": [
+  "eslint:recommended",
+  "plugin:@typescript-eslint/eslint-recommended"
+]
 }

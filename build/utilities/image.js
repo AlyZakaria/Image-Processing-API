@@ -8,12 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const path_1 = require("path");
-const fs = require('fs');
+const sharp_1 = __importDefault(require("sharp"));
+const fs_1 = __importDefault(require("fs"));
 const dir = './Resized_Images';
 const orDir = './Images';
-const sharp = require('sharp');
 class image {
     constructor(width, height, filename, type) {
         this.type = 'JPG';
@@ -27,8 +30,8 @@ class image {
     }
     // to check if the image is already in the resized_Image folder
     check() {
-        let filDir = this.fileTitle.join('.');
-        const files = fs.readdirSync(dir);
+        const filDir = this.fileTitle.join('.');
+        const files = fs_1.default.readdirSync(dir);
         let bool = false;
         files.forEach((file) => {
             if (file === filDir) {
@@ -46,7 +49,7 @@ class image {
             try {
                 //let imgDir = this.getTheImage(this.filename)
                 //if (imgDir === '') throw new Error()
-                yield sharp(`${[orDir, [this.filename, this.type].join('.')].join('/')}`)
+                yield (0, sharp_1.default)(`${[orDir, [this.filename, this.type].join('.')].join('/')}`)
                     .resize({
                     width: this.width,
                     height: this.height,
